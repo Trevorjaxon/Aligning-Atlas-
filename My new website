@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confessions of the Godly Truth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="Podcast Logo">
+            <h1>Confessions of the Godly Truth</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#episodes">Episodes</a></li>
+                <li><a href="#submit-confession">Submit a Confession</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h2>Breaking the Silence on Controversial Truths</h2>
+        <p>Dive into bold conversations about humanity, faith, and the ideas we’re often too afraid to explore.</p>
+        <button onclick="scrollToSection('episodes')">Listen Now</button>
+    </section>
+
+    <section id="episodes">
+        <h2>Latest Episodes</h2>
+        <div class="episode">
+            <h3>Episode 1: The Truth About Faith and Fear</h3>
+            <audio controls>
+                <source src="assets/episode1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="episode">
+            <h3>Episode 2: Challenging Morality in Modern Times</h3>
+            <audio controls>
+                <source src="assets/episode2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </section>
+
+    <section id="submit-confession">
+        <h2>Share Your Confession</h2>
+        <form id="confession-form">
+            <label for="name">Name (optional):</label>
+            <input type="text" id="name" name="name" placeholder="Anonymous">
+
+            <label for="email">Email (optional):</label>
+            <input type="email" id="email" name="email" placeholder="Email">
+
+            <label for="confession">Your Confession:</label>
+            <textarea id="confession" name="confession" placeholder="Write your confession here..." required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Confessions of the Godly Truth. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #222;
+    color: #fff;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Hero Section */
+#hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+}
+
+#hero button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #2575fc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Episodes Section */
+#episodes {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.episode {
+    margin-bottom: 20px;
+}
+
+/* Submit Confession Section */
+#submit-confession {
+    padding: 20px;
+    background-color: #eef;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input, form textarea, form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #2575fc;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #222;
+    color: #fff;
+}
+
+footer .social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+// Smooth scroll to sections
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+// Handle form submission
+document.getElementById("confession-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Thank you for your confession! It has been submitted anonymously.");
+    this.reset();
+});
